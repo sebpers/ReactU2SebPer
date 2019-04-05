@@ -6,9 +6,99 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: lightgrey;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  outline: none;
+  border: 5px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+}
+
+input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid lightgrey;
+}
+
+input:focus {
+  background-color: antiquewhite;
+}
+
+/* NAV */
+
+a {
+  color: black;
+}
+
+.is-active {
+  color: orange;
+}
+
+/* Login */
+.loginBackground {
+  background: lightgrey;
+  border-radius: 5px;
+  width: 80%;
+  height: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+
+.loginButton {
+  margin-top: 5px;
+  width: 50px;
+  background-color: lightcoral;
+  color: whitesmoke;
+}
+
+/* DASHBOARD */
+.cardSpace {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* USER LIST */
+.blackColor {
+  color: black;
+  font-size: 16px;
+}
+
+.orangeColor {
+  color: orange;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
 }

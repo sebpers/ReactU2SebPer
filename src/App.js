@@ -1,25 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
+import Navbar from './components/Navbar';
+import Dashboard from './Screens/DashboardScreen/Dashboard';
+import Login from './Screens/LoginScreen/Login';
+import User from './Screens/UserScreen/User';
+import Error from './components/Error';
+
+
+// Handles the view - Update the app each time the state changes
+// Also handles the logic to add and remove a user from userList
 class App extends Component {
+
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <Router>
+        <Navbar></Navbar>
+        <Switch>
+
+        <Route path="/" exact component={Login} />
+        <Route path="/login" exact component={Login} />
+        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/user/:user" component={User} />
+        <Route path="/user" exact component={User} />
+        <Route component={Error}/>
+        </Switch>
+
+      </Router>
       </div>
     );
   }
