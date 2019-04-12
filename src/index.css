@@ -38,6 +38,7 @@ ul {
 .App {
   text-align: center;
   display: flex;
+  height: 100vh;
 }
 
 input {
@@ -55,6 +56,8 @@ input:focus {
 
 a {
   color: black;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .is-active {
@@ -96,9 +99,4 @@ a {
 .orangeColor {
   color: orange;
   font-size: 16px;
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
 }

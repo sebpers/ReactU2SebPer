@@ -19,14 +19,14 @@ class App extends Component {
       <div className="App">
       <Router>
         <Navbar></Navbar>
-        <Switch>
 
-        <Route path="/" exact component={Login} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/dashboard" component={Dashboard} />
-        <Route path="/user/:user" component={User} />
-        <Route path="/user" exact component={User} />
-        <Route component={Error}/>
+        <Switch>
+          <Route path="/" exact component={Login} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/dashboard" exact component={Dashboard} />
+          <Route path="/user/:id" exact component={User} />
+          <Route path="/user" exact component={User} />
+          <Route component={Error}/>
         </Switch>
 
       </Router>

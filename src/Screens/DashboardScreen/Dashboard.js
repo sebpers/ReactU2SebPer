@@ -14,14 +14,7 @@ export default class Dashboard extends Component {
     this.state = {
       activeUser: [],
       inactiveUser: [],
-      userList:
-      [
-        {id: 1, name: 'Mimmi', isActive: true},
-        {id: 2, name: 'Kalle', isActive: false},
-        {id: 3, name: 'Klara', isActive: true},
-        {id: 4, name: 'John', isActive: true},
-        {id: 5, name: 'Stina', isActive: false}
-      ]
+      userList: []
     }
   }
 
@@ -32,10 +25,20 @@ export default class Dashboard extends Component {
   * Sets state.userList to the "updated" list
   */
   updateUserList = (id, name, isActive) => {
-    let newUserList = this.state.userList.concat({id, name, isActive});
+    let newUserList = this.state.userList.concat({name, isActive});
     this.setState({userList: newUserList, isActive: true});
   }
 
+  componentDidMount() {
+
+    fetch('http://api.softhouse.rocks/users')
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      this.setState({userList: data})
+    });
+  }
 
   /*
   * Takes an the hard coded input from AddRemoveUser component and use it to remove user from list
