@@ -34,10 +34,10 @@ export default class User extends Component {
   }
 }
 
-// Toggle true or false in state.toggleInfo
-toggleInfo = () => {
-  this.setState({toggleInfo: !this.state.toggleInfo});
-}
+  // Toggle true or false in state.toggleInfo
+  toggleInfo = () => {
+    this.setState({toggleInfo: !this.state.toggleInfo});
+  }
 
   render() {
 
