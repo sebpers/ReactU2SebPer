@@ -4,7 +4,6 @@ import UserListComponent from '../.././components/UserListComponent';
 import AddRemoveUser from '../.././components/AddRemoveUser';
 import CardComponent from '../.././components/CardComponent';
 
-
 // Handles the main logic with update the list and remove users and pass info to children, "owns" the user list
 export default class Dashboard extends Component {
 
@@ -29,14 +28,14 @@ export default class Dashboard extends Component {
     this.setState({userList: newUserList, isActive: true});
   }
 
+  // Fetching users from server
   componentDidMount() {
-
     fetch('http://api.softhouse.rocks/users')
     .then((response) => {
-      return response.json();
+      return response.json(); // Transform jSON data to string
     })
     .then((data) => {
-      this.setState({userList: data})
+      this.setState({userList: data}) // Put the data into state userList
     });
   }
 

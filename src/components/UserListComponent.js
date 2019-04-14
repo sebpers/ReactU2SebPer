@@ -65,15 +65,14 @@ class UserListComponent extends Component {
   render() {
     const newUserList = this.props.newListFromApp.map((user, i) => {
 
-          return (
-            <Link className={this.state.color ? "blackColor" : "orangeColor" } key={i} to={`/user/${user.id}`}>
-              <li key={i} style={this.liStyle}>
-               {user.name}
-              </li>
-            </Link>
-          )
+        return (
+          <Link className={this.state.color ? "blackColor" : "orangeColor" } key={i} to={`/user/${user.id}`}>
+            <li key={i} style={this.liStyle}>
+              {user.name}
+            </li>
+          </Link>
+        )
     });
-
 
     return (
       <div>

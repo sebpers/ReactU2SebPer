@@ -51,13 +51,11 @@ class AddRemoveUser extends Component {
   // The key pressed gets into value
   handleChange = (event) => {
     this.setState({value: event.target.value});
-    event.preventDefault();
   }
 
   // Add user and pass the value into app.js
   // If the value is not empty, pass the value into props.updateUserList in App.js
   addUser = (event) => {
-    event.preventDefault();
     if (this.state.value !== '') {
       // Send values of null, value and true into the upDateList
       this.props.updateUserList(null ,this.state.value.toUpperCase(), true);
